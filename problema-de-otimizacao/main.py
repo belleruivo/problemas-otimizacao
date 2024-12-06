@@ -8,6 +8,8 @@ class OtimizadorCilindro:
         self.calculadora = calculadora
 
     def executar(self):
+        self.entrada.introducao()
+        
         while True:
             os.system('cls' if os.name == 'nt' else 'clear')
 

@@ -1,4 +1,39 @@
+import time
+
 class Entrada:
+
+    @staticmethod
+    def introducao():
+        # Introdução explicativa
+        print("\n=== 📏 CALCULADORA DE OTIMIZAÇÃO DE CILINDRO 📏 ===")
+        time.sleep(1)
+        print("\nBem-vindo à calculadora de otimização de cilindros!")
+        time.sleep(1)
+        
+        # Importância do exercício
+        print("\nNeste programa, vamos calcular as dimensões ótimas de um recipiente cilíndrico.")
+        time.sleep(1)
+        print("\nEsse tipo de otimização é importante em muitos cenários, como no design de embalagens,")
+        print("onde buscamos minimizar o uso de materiais enquanto mantemos o volume desejado do recipiente.")
+        time.sleep(2)
+        
+        # Conceitos usados (Derivadas)
+        print("\nVamos utilizar conceitos de cálculo, especificamente derivadas, para encontrar as dimensões ideais.")
+        time.sleep(1)
+        print("\nA derivada é uma ferramenta matemática que nos ajuda a entender como uma função muda.")
+        print("No caso deste exercício, ela será usada para determinar os valores de raio e altura do cilindro")
+        print("que minimizam o custo de material, maximizando a eficiência da produção.")
+        time.sleep(3)
+        
+        # Conceito de ponto crítico
+        print("\nUtilizando a primeira e segunda derivada, encontramos o ponto crítico, que nos dá o valor ideal do raio.")
+        print("A segunda derivada nos ajuda a confirmar que esse ponto é realmente o de mínimo custo.")
+        time.sleep(2)
+        
+        # Orientação e início
+        print("\nPressione 'Enter' para começar a inserção dos dados.")
+        input()
+
     @staticmethod
     def obter_volume():
         while True:
