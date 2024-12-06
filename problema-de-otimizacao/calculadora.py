@@ -1,16 +1,27 @@
 import math
+from typing import Tuple
 
 class Calculadora:
     @staticmethod
-    def calcular_dimensoes(volume, tem_tampa, custo_base, custo_lateral):
-        n_bases = 2 if tem_tampa else 1
-        raio = (volume * custo_lateral / (math.pi * custo_base * n_bases)) ** (1/3)
-        altura = volume / (math.pi * raio**2)
+    def calcular_dimensoes(volume: float, tem_tampa: bool, custo_base: float, custo_lateral: float) -> Tuple[float, float, float, float, float]:
+        n_bases = 2 if tem_tampa else 1 
+        
+        # volume
+        volume_real = volume * math.pi
+
+        # raio ótimo
+        raio = (volume_real * custo_lateral / (math.pi * custo_base * n_bases)) ** (1/3)
+        
+        # altura
+        altura = volume_real / (math.pi * raio**2)
+        
+        # custos
         area_base = math.pi * raio**2
         area_lateral = 2 * math.pi * raio * altura
-        custo_base_total = custo_base * area_base * n_bases
+        custo_base_total = n_bases * custo_base * area_base
         custo_lateral_total = custo_lateral * area_lateral
         custo_total = custo_base_total + custo_lateral_total
+
         return raio, altura, custo_base_total, custo_lateral_total, custo_total
 
     @staticmethod
