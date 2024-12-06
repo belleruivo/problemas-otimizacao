@@ -4,20 +4,17 @@ class Entrada:
 
     @staticmethod
     def introducao():
-        # Introdução explicativa
         print("\n=== 📏 CALCULADORA DE OTIMIZAÇÃO DE CILINDRO 📏 ===")
         time.sleep(1)
         print("\nBem-vindo à calculadora de otimização de cilindros!")
         time.sleep(1)
         
-        # Importância do exercício
         print("\nNeste programa, vamos calcular as dimensões ótimas de um recipiente cilíndrico.")
         time.sleep(1)
         print("\nEsse tipo de otimização é importante em muitos cenários, como no design de embalagens,")
         print("onde buscamos minimizar o uso de materiais enquanto mantemos o volume desejado do recipiente.")
         time.sleep(2)
         
-        # Conceitos usados (Derivadas)
         print("\nVamos utilizar conceitos de cálculo, especificamente derivadas, para encontrar as dimensões ideais.")
         time.sleep(1)
         print("\nA derivada é uma ferramenta matemática que nos ajuda a entender como uma função muda.")
@@ -25,12 +22,10 @@ class Entrada:
         print("que minimizam o custo de material, maximizando a eficiência da produção.")
         time.sleep(3)
         
-        # Conceito de ponto crítico
         print("\nUtilizando a primeira e segunda derivada, encontramos o ponto crítico, que nos dá o valor ideal do raio.")
         print("A segunda derivada nos ajuda a confirmar que esse ponto é realmente o de mínimo custo.")
         time.sleep(2)
         
-        # Orientação e início
         print("\nPressione 'Enter' para começar a inserção dos dados.")
         input()
 
@@ -40,7 +35,6 @@ class Entrada:
             print("\n=== 📏 CALCULADORA DE OTIMIZAÇÃO DE CILINDRO 📏 ===")
             volume = input("\nDigite o volume do recipiente em ml (1ml = 1cm³): ")
             
-            # Verifica se o volume é um número inteiro ou decimal
             if not volume.replace('.', '', 1).isdigit():
                 print("❌ ERRO: O volume deve ser um número válido!")
                 continue
@@ -50,7 +44,6 @@ class Entrada:
                 print("❌ ERRO: O volume precisa ser positivo!")
                 continue
             return volume
-
 
     @staticmethod
     def obter_tampa():
@@ -66,7 +59,6 @@ class Entrada:
             try:
                 print("\n=== 💰 CUSTOS DOS MATERIAIS 💰 ===")
                 
-                # Recebe o custo da base e valida
                 custo_base = input("\nDigite o custo do material da base (R$/cm²): ").strip()
                 if ',' in custo_base:
                     print("❌ ERRO: Use ponto (.) ao invés de vírgula (,) para separar os decimais!")
@@ -80,7 +72,6 @@ class Entrada:
                     print("❌ ERRO: O custo precisa ser positivo!")
                     continue
                 
-                # Recebe o custo lateral e valida
                 custo_lateral = input("Digite o custo do material lateral (R$/cm²): ").strip()
                 if ',' in custo_lateral:
                     print("❌ ERRO: Use ponto (.) ao invés de vírgula (,) para separar os decimais!")
