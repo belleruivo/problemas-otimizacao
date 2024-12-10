@@ -1,3 +1,5 @@
+''' “Um recipiente cilíndrico, aberto em cima, deve ter a capacidade de 375π cm³. O custo do material usado para a base do recipiente é de R$ 0,15 por cm² e o custo do material usado na lateral é de R$ 0,05 por cm². Se não há perda de material, determine as dimensões que MINIMIZAM o custo do material para construí-lo." '''
+
 import os
 from entrada import Entrada
 from calculadora import Calculadora
@@ -27,16 +29,16 @@ class OtimizadorCilindro:
             
             # calculando ponto crítico e derivadas
             ponto_critico = self.calculadora.calcular_ponto_critico(volume, custo_base, custo_lateral, n_bases)
-            primeira_derivada = self.calculadora.primeira_derivada(volume, custo_base, custo_lateral, ponto_critico, n_bases)
+
             segunda_derivada = self.calculadora.verificar_minimo(volume, custo_base, custo_lateral, ponto_critico, n_bases)
             
-            self.mostrar_resultados(raio, altura, custo_base_total, custo_lateral_total, custo_total, ponto_critico, primeira_derivada, segunda_derivada)
+            self.mostrar_resultados(raio, altura, custo_base_total, custo_lateral_total, custo_total, ponto_critico, segunda_derivada)
             
             repetir = input("\nDeseja calcular novamente? (s/n): ").strip().lower()
             if repetir != 's':
                 break
 
-    def mostrar_resultados(self, raio, altura, custo_base_total, custo_lateral_total, custo_total, ponto_critico, primeira_derivada, segunda_derivada):
+    def mostrar_resultados(self, raio, altura, custo_base_total, custo_lateral_total, custo_total, ponto_critico, segunda_derivada):
         print("\n=== 📊 RESULTADOS DA OTIMIZAÇÃO 📊 ===")
         print(f"\nDimensões ótimas do recipiente:")
         print(f"📏 Raio: {raio:.2f} cm")
@@ -46,12 +48,9 @@ class OtimizadorCilindro:
         print(f"\n💰 Custos:")
         print(f"💵 Custo da(s) base(s): R$ {custo_base_total:.2f}")
         print(f"💵 Custo lateral: R$ {custo_lateral_total:.2f}")
-        print(f"💵 Custo total: R$ {custo_total:.2f}")
-        
-        print("\n=== 📈 DERIVADAS 📈 ===")
-        print(f"📍 Ponto crítico (raio ótimo): {ponto_critico:.2f} cm")
-        print(f"📉 Primeira derivada no ponto crítico: {primeira_derivada:.2f}")
-        print(f"📈 Segunda derivada no ponto crítico: {segunda_derivada:.2f}")
+        print(f"💵 Custo total da embalagem: R$ {custo_total:.2f}")
+
+        print(f"\n📍 Ponto crítico (raio ótimo): {ponto_critico:.2f} cm")
         
         if segunda_derivada > 0:
             print("✅ Como a segunda derivada é positiva, confirmamos que é um ponto de mínimo!")

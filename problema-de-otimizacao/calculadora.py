@@ -1,5 +1,5 @@
-import math
-from typing import Tuple
+import math 
+from typing import Tuple # Importa Tuple para definir tipos de retorno das funções
 
 class Calculadora:
     @staticmethod
@@ -9,13 +9,13 @@ class Calculadora:
         # volume
         volume_real = volume * math.pi
 
-        # raio ótimo
+        # raio ótimo - isso está na conta da folha!
         raio = (volume_real * custo_lateral / (math.pi * custo_base * n_bases)) ** (1/3)
         
-        # altura
+        # altura - isso está na conta da folha!
         altura = volume_real / (math.pi * raio**2)
         
-        # custos
+        # custos - isso está na conta da folha!
         area_base = math.pi * raio**2
         area_lateral = 2 * math.pi * raio * altura
         custo_base_total = n_bases * custo_base * area_base
@@ -25,13 +25,13 @@ class Calculadora:
         return raio, altura, custo_base_total, custo_lateral_total, custo_total
 
     @staticmethod
-    def verificar_minimo(volume, custo_base, custo_lateral, raio, n_bases):
-        return 2 * math.pi * custo_base * n_bases + 4 * volume * custo_lateral / (raio**3)
+    def calcular_ponto_critico(volume, custo_base, custo_lateral, n_bases):
+        return (volume * custo_lateral / (n_bases * custo_base * math.pi)) ** (1/3)
 
     @staticmethod
     def primeira_derivada(volume, custo_base, custo_lateral, raio, n_bases):
         return 2 * math.pi * custo_base * n_bases * raio - (2 * volume * custo_lateral) / (raio**2)
 
     @staticmethod
-    def calcular_ponto_critico(volume, custo_base, custo_lateral, n_bases):
-        return (volume * custo_lateral / (n_bases * custo_base * math.pi)) ** (1/3)
+    def verificar_minimo(volume, custo_base, custo_lateral, raio, n_bases):
+        return 2 * math.pi * custo_base * n_bases + 4 * volume * custo_lateral / (raio**3)

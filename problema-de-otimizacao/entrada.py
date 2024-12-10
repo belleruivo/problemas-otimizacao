@@ -33,7 +33,7 @@ class Entrada:
     def obter_volume():
         while True:
             print("\n=== 📏 CALCULADORA DE OTIMIZAÇÃO DE CILINDRO 📏 ===")
-            volume = input("\nDigite o volume do recipiente em ml (1ml = 1cm³): ")
+            volume = input("\nPor favor, digite o volume do recipiente em ml (1ml = 1cm³): ")
             
             if not volume.replace('.', '', 1).isdigit():
                 print("❌ ERRO: O volume deve ser um número válido!")
@@ -59,7 +59,7 @@ class Entrada:
             try:
                 print("\n=== 💰 CUSTOS DOS MATERIAIS 💰 ===")
                 
-                custo_base = input("\nDigite o custo do material da base (R$/cm²): ").strip()
+                custo_base = input("\nDigite o custo do material da base (R$/cm²). Use PONTO para separar as casas decimais: ").strip()
                 if ',' in custo_base:
                     print("❌ ERRO: Use ponto (.) ao invés de vírgula (,) para separar os decimais!")
                     continue
@@ -72,7 +72,7 @@ class Entrada:
                     print("❌ ERRO: O custo precisa ser positivo!")
                     continue
                 
-                custo_lateral = input("Digite o custo do material lateral (R$/cm²): ").strip()
+                custo_lateral = input("Digite o custo do material lateral (R$/cm²). Use PONTO para separar as casas decimais: ").strip()
                 if ',' in custo_lateral:
                     print("❌ ERRO: Use ponto (.) ao invés de vírgula (,) para separar os decimais!")
                     continue
